@@ -5,11 +5,26 @@
                 <img src="https://bulma.io/images/placeholders/64x64.png">
             </p>
         </figure>
-            <div class="medida-content">
+            <div class="media-content">
 
             </div>
     </article>
 </div>
 
 <% shouts.each do | shout | %>
-    <% end %>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/64x64.png">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <strong>James Randolph</strong><br />
+                    <p><%= shout.shout %></p>
+                </div>
+            </div>
+        </article>
+    </div>
+<% end %>
