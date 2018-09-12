@@ -1,0 +1,22 @@
+<%= form_with(model: shout, local: true) do |form| %>
+  <% if shout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shout.errors.count, "error") %> prohibited this shout from being saved:</h2>
+
+      <ul>
+      <% shout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :shout %>
+    <%= form.text_area :shout, id: :shout_shout %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
