@@ -1,22 +1,9 @@
-<%= form_with(model: shout, local: true) do |form| %>
-  <% if shout.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(shout.errors.count, "error") %> prohibited this shout from being saved:</h2>
-
-      <ul>
-      <% shout.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :shout %>
-    <%= form.text_area :shout, id: :shout_shout %>
+<%= simple_form_for(@shout) do |f| %>
+<%= f.error_notification %>
+<div class="field">
+  <div class="control">
+    <%= f.input :shout, label: "Give a ShoutOut", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Give a shoutout...", autofocus: true %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
+<%= f.button :submit, class: "button is-info" %>
 <% end %>
