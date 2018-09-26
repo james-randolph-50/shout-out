@@ -1,3 +1,4 @@
+
 class ShoutsController < ApplicationController
   before_action :set_shout, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -15,7 +16,7 @@ class ShoutsController < ApplicationController
 
   # GET /shouts/new
   def new
-    @shout = Shout.new
+    @shout = current_user.shouts.new
   end
 
   # GET /shouts/1/edit
@@ -25,7 +26,7 @@ class ShoutsController < ApplicationController
   # POST /shouts
   # POST /shouts.json
   def create
-    @shout = Shout.new(shout_params)
+    @shout = current_user.shouts.build(shout_params)
 
     respond_to do |format|
       if @shout.save
@@ -68,7 +69,6 @@ class ShoutsController < ApplicationController
       @shout = Shout.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def shout_params
       params.require(:shout).permit(:shout)
     end
