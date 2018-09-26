@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+<<<<<<< HEAD
          has_many :shouts
+=======
+      has_many :shouts
+>>>>>>> 294d7336c24df0edd0ccf35a7cee0ccca84a468e
 end
