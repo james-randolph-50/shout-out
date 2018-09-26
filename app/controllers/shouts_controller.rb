@@ -16,7 +16,7 @@ class ShoutsController < ApplicationController
 
   # GET /shouts/new
   def new
-    @shout = current_user.shouts.new
+    @shout = current_user.shouts.build
   end
 
   # GET /shouts/1/edit
