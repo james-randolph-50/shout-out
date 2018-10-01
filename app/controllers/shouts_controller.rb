@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5dbff343c8745a2ce35e9af423d8b3543f514c7
 class ShoutsController < ApplicationController
   before_action :set_shout, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -15,7 +19,15 @@ class ShoutsController < ApplicationController
 
   # GET /shouts/new
   def new
+<<<<<<< HEAD
     @shout = current_user.shouts.new
+=======
+<<<<<<< HEAD
+    @shout = current_user.shouts.build
+=======
+    @shout = current_user.shouts.new
+>>>>>>> 294d7336c24df0edd0ccf35a7cee0ccca84a468e
+>>>>>>> e5dbff343c8745a2ce35e9af423d8b3543f514c7
   end
 
   # GET /shouts/1/edit
@@ -68,8 +80,15 @@ class ShoutsController < ApplicationController
       @shout = Shout.find(params[:id])
     end
 
+<<<<<<< HEAD
     # Never trust parameters from the scary internet, only allow the white list through.
     def shout_params
       params.require(:shout).permit(:shout)
     end
 end
+=======
+    def shout_params
+      params.require(:shout).permit(:shout)
+    end
+end
+>>>>>>> e5dbff343c8745a2ce35e9af423d8b3543f514c7

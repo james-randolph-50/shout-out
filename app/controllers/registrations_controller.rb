@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class RegistrationsController < Devise::RegistrationsController
 
     private
@@ -11,3 +12,18 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
 end
+=======
+class RegistrationsController < Devise::RegistrationsController 
+
+	private
+
+	def sign_up_params 
+		params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+	end
+
+	def account_update_params 
+		params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :current_password)
+	end
+
+end
+>>>>>>> e5dbff343c8745a2ce35e9af423d8b3543f514c7

@@ -36,10 +36,16 @@
           <div class="navbar-item">
 					<div class="field is-grouped">
               <p class="control">
+<<<<<<< HEAD
               <% if user_signed_in? %>
                 <%= link_to 'New ShoutOut', root_path, class: "button is-info is-inverted" %>
               </p>
               
+=======
+                <%= link_to 'New ShoutOut', root_path, class: "button is-info is-inverted" %>
+              </p>
+              <% if user_signed_in? %>
+>>>>>>> e5dbff343c8745a2ce35e9af423d8b3543f514c7
                 <p class="control">
                   <%= link_to current_user.name, edit_user_registration_path, class: "button is-info" %>
                 </p>
